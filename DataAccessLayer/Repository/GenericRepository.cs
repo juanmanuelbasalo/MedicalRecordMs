@@ -12,7 +12,7 @@ namespace MedicalRecordMs.DataAccessLayer.Repository
             _dbContext = dbContext;
         }
 
-        public IEnumerable<TEntity> GetAllReadOnly<TEntity>() where TEntity : BaseEntity
+        public IQueryable<TEntity> GetAllReadOnly<TEntity>() where TEntity : BaseEntity
         {
             var entities = _dbContext.Set<TEntity>().AsNoTracking();
             return entities;
@@ -22,7 +22,7 @@ namespace MedicalRecordMs.DataAccessLayer.Repository
             var entities = _dbContext.Set<TEntity>();
             entities.Add(entity);
         }
-        public async Task<TEntity> FindAsync<TEntity>(Expression<Func<TEntity, bool>> searchTerm) where TEntity : BaseEntity
+        public async Task<TEntity?> FindAsync<TEntity>(Expression<Func<TEntity, bool>> searchTerm) where TEntity : BaseEntity
         {
             var entities = _dbContext.Set<TEntity>();
             var entity = await entities.FirstOrDefaultAsync(searchTerm);
@@ -40,6 +40,21 @@ namespace MedicalRecordMs.DataAccessLayer.Repository
         {
             var result = await _dbContext.SaveChangesAsync(userEmail);
             return result;
+        }
+
+    }
+
+    public static class RepositoryExtensions
+    {
+        public static IQueryable<TEntity> IncludeRelatedEntities<TEntity>(this IQueryable<TEntity> query, params Expression<Func<TEntity, object>>[] includes) where TEntity : BaseEntity
+        {
+            foreach (var include in includes)
+            {
+                if (include.Body is MemberExpression)
+                    query = query.Include(include);
+            }
+
+            return query;
         }
     }
 }
