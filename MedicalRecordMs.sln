@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32407.343
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalRecordMs", "MedicalRecordMs.csproj", "{32501ECB-302F-4461-8040-2D7B03A62525}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MedicalRecordMs", "MedicalRecordMs.csproj", "{32501ECB-302F-4461-8040-2D7B03A62525}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalRecordMsTest", "..\MedicalRecordMsTest\MedicalRecordMsTest.csproj", "{C72B144C-7988-4998-98B6-5D48A02C0E5D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{32501ECB-302F-4461-8040-2D7B03A62525}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32501ECB-302F-4461-8040-2D7B03A62525}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32501ECB-302F-4461-8040-2D7B03A62525}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C72B144C-7988-4998-98B6-5D48A02C0E5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C72B144C-7988-4998-98B6-5D48A02C0E5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C72B144C-7988-4998-98B6-5D48A02C0E5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C72B144C-7988-4998-98B6-5D48A02C0E5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

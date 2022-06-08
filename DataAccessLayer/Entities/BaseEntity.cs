@@ -1,9 +1,9 @@
 ﻿namespace MedicalRecordMs.DataAccessLayer.Entities
 {
-    public class BaseEntity
+    public abstract class BaseEntity
     {
         public Guid Id { get; }
-        public BaseEntity(Guid id)
+        protected BaseEntity(Guid id)
         {
             Id = id;
         }

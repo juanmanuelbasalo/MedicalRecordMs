@@ -9,6 +9,9 @@ namespace MedicalRecordMs.DataAccessLayer
         {
         }
 
+        public DbSet<PatientEntity> Patients { get; set; }
+        public DbSet<MedicalRecordEntity> MedicalRecords { get; set; }
+
         public async Task<bool> SaveChangesAsync(string userEmail, CancellationToken cancellationToken = default)
         {
             OnBeforeSaving(userEmail);
